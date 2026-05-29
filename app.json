@@ -1,9 +1,9 @@
 {
-  "name": "CypherX",
-  "description": "CypherX, your friendly assistant!",
+  "name": "Tsah_Mkoloni",
+  "description": "Tsah_Mkoloni, your friendly assistant!",
   "logo": "https://i.ibb.co/nqsRcKDB/Xploader4.jpg",
   "keywords": [],
-  "repository": "https://github.com/Dark-Xploit/CypherX",
+  "repository": "https://github.com/mkoloni5/Tsah-Mkoloni",
   "stack": "container",
   "addons": [
     {
