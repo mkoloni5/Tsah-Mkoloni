@@ -11,7 +11,7 @@
       "start": "node index.js",
       "dev": "nodemon Tsah_Mkoloni.js"
    },
-  "author": "Tylor",
+  "author": "Tsah_Mkoloni",
   "dependencies": {
         "adm-zip": "^0.5.16",
         "better-sqlite3": "^12.2.0",
