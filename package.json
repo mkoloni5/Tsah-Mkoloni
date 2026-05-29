@@ -1,5 +1,5 @@
 {
-  "name": "CypherX",
+  "name": "Tsah_Mkoloni",
   "version": "1.9.4",
   "description": "The best Whatsapp bot",
   "main": "index.js",
@@ -9,7 +9,7 @@
    },
   "scripts": {
       "start": "node index.js",
-      "dev": "nodemon cypher.js"
+      "dev": "nodemon Tsah_Mkoloni.js"
    },
   "author": "Tylor",
   "dependencies": {
