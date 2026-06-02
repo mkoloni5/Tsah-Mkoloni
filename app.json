@@ -15,7 +15,7 @@
   },
 "env": {
   "SESSION_ID": {
-    "description": "Must begin with 'XPLOADER-BOT:~' or 'CYPHER-X:~'.",
+    "description": "Must begin with 'XPLOADER-BOT:~' or 'Tsah_Mkoloni:~'.",
     "value": "",
     "required": false
   }
