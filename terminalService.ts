@@ -34,7 +34,7 @@ const inMemoryPayments = new Map<string, PaymentTransaction>();
 const DEFAULT_TERMINAL_ID = 'main_terminal';
 inMemoryTerminals.set(DEFAULT_TERMINAL_ID, {
   id: DEFAULT_TERMINAL_ID,
-  name: 'Default Danscom Terminal',
+  name: 'Default Tsah_Mkolo Terminal',
   operatorName: 'System Admin',
   weeklyRate: 5,
   setupFee: 0,
@@ -420,10 +420,10 @@ export const activateSubscription = async (sessionId: string, type: 'setup' | 'w
 
   // Keep in-memory config for high availability!
   const premiumCache = global as any;
-  if (!premiumCache.danscomPremium) {
-    premiumCache.danscomPremium = new Map<string, any>();
+  if (!premiumCache.tsahMkoloPremium) {
+    premiumCache.tsahMkoloPremium = new Map<string, any>();
   }
-  premiumCache.danscomPremium.set(userKey, {
+  premiumCache.tsahMkoloPremium.set(userKey, {
     sessionId,
     expiry: expiryDate,
     type
@@ -446,8 +446,8 @@ export const isUserPaid = async (identifier: string): Promise<boolean> => {
 
   // Check memory cache first
   const premiumCache = global as any;
-  if (premiumCache.danscomPremium?.has(key)) {
-    const data = premiumCache.danscomPremium.get(key);
+  if (premiumCache.tsahMkoloPremium?.has(key)) {
+    const data = premiumCache.tsahMkoloPremium.get(key);
     if (data.expiry > new Date()) return true;
   }
 
@@ -459,10 +459,10 @@ export const isUserPaid = async (identifier: string): Promise<boolean> => {
         const expiry = data?.expiry?.toDate() || new Date(0);
         
         // Sync cache
-        if (!premiumCache.danscomPremium) {
-          premiumCache.danscomPremium = new Map();
+        if (!premiumCache.tsahMkoloPremium) {
+          premiumCache.tsahMkoloPremium = new Map();
         }
-        premiumCache.danscomPremium.set(key, {
+        premiumCache.tsahMkoloPremium.set(key, {
           sessionId: data?.sessionId || key,
           expiry,
           type: data?.type || 'weekly'
@@ -553,5 +553,3 @@ export const getSessionMetadata = async (sessionId: string): Promise<SessionMeta
   }
   return null;
 };
-
-
