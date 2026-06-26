@@ -95,7 +95,7 @@ app.get('/api/health', async (req, res) => {
     const { getPayheroConfig } = await import('./services/terminalService.js');
     const isSandbox = getPayheroConfig().isSandbox;
     res.json({ 
-      status: 'Online (DANSCOM Running)',
+      status: 'Online (Tsah_Mkolo Running)',
       isFirestoreUsable: getIsFirestoreUsable(),
       projectId: config.firebase.projectId || null,
       clientEmail: config.firebase.clientEmail || null,
@@ -104,7 +104,7 @@ app.get('/api/health', async (req, res) => {
     });
   } catch (err: any) {
     res.json({ 
-      status: 'Online (DANSCOM Running)',
+      status: 'Online (Tsah_Mkolo Running)',
       isFirestoreUsable: getIsFirestoreUsable(),
       projectId: config.firebase.projectId || null,
       clientEmail: config.firebase.clientEmail || null,
@@ -362,7 +362,7 @@ app.post('/api/payments/create-checkout', async (req, res) => {
     
     const details = await initiateIntasendPayment({
       amount: parseFloat(amount),
-      email: email || `${sessionId}@danscom.com`,
+      email: email || `${sessionId}@tsah-mkolo.com`,
       phoneNumber,
       sessionId,
       terminalId,
