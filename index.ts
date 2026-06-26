@@ -21,7 +21,7 @@ const sendPaymentTrigger = async (sock: WASocket, m: any, from: string, sender: 
     });
     
     await sock.sendMessage(from, { 
-      text: `⚠️ *Authorization Key Required* 💳\n\nThis command requires an active subscription state (5 KES weekly).\n\nPlease upgrade securely and complete automated checkout immediately u[...]
+      text: `⚠️ *Authorization Key Required* 💳\n\nThis command requires an active subscription state (5 KES weekly).\n\nPlease upgrade securely and complete automated checkout immediately u[...[...]
     }, { quoted: m });
   } catch (e) {
     await sock.sendMessage(from, { text: '❌ *IntaSend Payment Server Offline:* Please retry in a few moments.' }, { quoted: m });
@@ -118,21 +118,21 @@ export const processCommand = async (
                 message: {
                   templateMessage: {
                     hydratedTemplate: {
-                      imageMessage: media.imageMessage,
+                       imageMessage: media.imageMessage,
                       hydratedContentText: menuText,
                       hydratedButtons: [
                         {
                           index: 1,
                           urlButton: {
-                            displayText: '🔔 JOIN CHANNEL',
-                            url: 'https://whatsapp.com/channel/0029Vb7cIiCFcow5xMvqxs2H'
+                            displayText: '🔔 JOIN GROUP',
+                            url: 'https://chat.whatsapp.com/Jr80q5qPn8M2p553YpwO0B'
                           }
                         },
                         {
                           index: 2,
                           urlButton: {
-                            displayText: '💬 JOIN SUPPORT GROUP',
-                            url: 'https://chat.whatsapp.com/Fn2XuWVDZPmCypETN9WCC1'
+                            displayText: '💬 TELEGRAM SUPPORT',
+                            url: 'https://t.me/m3ko3lon3i'
                           }
                         }
                       ]
@@ -152,15 +152,15 @@ export const processCommand = async (
                         {
                           index: 1,
                           urlButton: {
-                            displayText: '🔔 JOIN CHANNEL',
-                            url: 'https://whatsapp.com/channel/0029Vb7cIiCFcow5xMvqxs2H'
+                            displayText: '🔔 JOIN GROUP',
+                            url: 'https://chat.whatsapp.com/Jr80q5qPn8M2p553YpwO0B'
                           }
                         },
                         {
                           index: 2,
                           urlButton: {
-                            displayText: '💬 JOIN SUPPORT GROUP',
-                            url: 'https://chat.whatsapp.com/Fn2XuWVDZPmCypETN9WCC1'
+                            displayText: '💬 TELEGRAM SUPPORT',
+                            url: 'https://t.me/m3ko3lon3i'
                           }
                         }
                       ]
@@ -173,7 +173,7 @@ export const processCommand = async (
         } catch (err: any) {
           console.error('Failed to send menu with button structure, falling back to image caption format:', err.message);
           const imagePath = path.join(process.cwd(), 'src/assets/images/tsah_mkolo_menu_banner_1779306614113.png');
-          const fallbackText = `${menuText}\n\n[ 🔔 JOIN CHANNEL ]\nhttps://whatsapp.com/channel/0029Vb7cIiCFcow5xMvqxs2H\n\n[ 💬 JOIN SUPPORT GROUP ]\nhttps://chat.whatsapp.com/Fn2XuWVDZPmCy[...]
+          const fallbackText = `${menuText}\n\n[ 🔔 JOIN GROUP ]\nhttps://chat.whatsapp.com/Jr80q5qPn8M2p553YpwO0B\n\n[ 💬 TELEGRAM SUPPORT ]\nhttps://t.me/m3ko3lon3i`;
           
           if (fs.existsSync(imagePath)) {
             await sock.sendMessage(from, { 
@@ -300,7 +300,7 @@ export const processCommand = async (
       case 'owner':
       case 'contact': {
         const ownerNum = '254713811622';
-        const contactText = `👤 *TSAH_MKOLO OFFICIAL BOT OWNER* 👤\n\n• *Name:* Daniel Musembi\n• *Phone / Contact:* +${ownerNum}\n• *Country:* Kenya 🇰🇪\n• *Role:* Developer & Lead[...]
+        const contactText = `👤 *TSAH_MKOLO OFFICIAL BOT OWNER* 👤\n\n• *Name:* Daniel Musembi\n• *Phone / Contact:* +${ownerNum}\n• *Country:* Kenya 🇰🇪\n• *Role:* Developer & L[...]
         
         const vcard = 'BEGIN:VCARD\n' 
                     + 'VERSION:3.0\n' 
@@ -325,7 +325,7 @@ export const processCommand = async (
         const hrs = Math.floor(uptimeSeconds / 3600);
         const mins = Math.floor((uptimeSeconds % 3600) / 60);
         const secs = Math.floor(uptimeSeconds % 60);
-        await sock.sendMessage(from, { text: `⚡ *TSAH_MKOLO Bot Runtime System Status:* \n\n• Active connection: *${hrs}h ${mins}m ${secs}s*\n• Gateway Latency: *32 ms*\n• Connected session [...]
+        await sock.sendMessage(from, { text: `⚡ *TSAH_MKOLO Bot Runtime System Status:* \n\n• Active connection: *${hrs}h ${mins}m ${secs}s*\n• Gateway Latency: *32 ms*\n• Connected sessi[...]
         break;
       }
 
@@ -335,17 +335,17 @@ export const processCommand = async (
       }
 
       case 'script': {
-        await sock.sendMessage(from, { text: `💻 *TSAH_MKOLO System Script Repository:* \n\n• *GitHub:* https://github.com/tsah_mkolo/tsah_mkolo-bot-main\n_Script access represents premium setup._` },[...]
+        await sock.sendMessage(from, { text: `💻 *TSAH_MKOLO System Script Repository:* \n\n• *GitHub:* https://github.com/tsah_mkolo/tsah_mkolo-bot-main\n_Script access represents premium se[...]
         break;
       }
 
       case 'support': {
-        await sock.sendMessage(from, { text: `💬 *TSAH_MKOLO Official Community & Support:* \n\n• *Support Group:* https://chat.whatsapp.com/Fn2XuWVDZPmCypETN9WCC1\n• *Update Channel:* https:/[...]
+        await sock.sendMessage(from, { text: `💬 *TSAH_MKOLO Official Community & Support:* \n\n• *Telegram:* https://t.me/m3ko3lon3i\n• *WhatsApp Group:* https://chat.whatsapp.com/Jr80q5qPn8M2p553YpwO0B[...]
         break;
       }
 
       case 'donate': {
-        await sock.sendMessage(from, { text: `💖 *Support TSAH_MKOLO Bot Development:* \n\nIf you love our services, you can support us through: \n• M-Pesa Buy Goods Till: *254713811622*\n• Su[...]
+        await sock.sendMessage(from, { text: `💖 *Support TSAH_MKOLO Bot Development:* \n\nIf you love our services, you can support us through: \n• M-Pesa Buy Goods Till: *254713811622*\n•[...]
         break;
       }
 
@@ -775,7 +775,7 @@ _Tune in or type *.live* to check updates!_`;
         break;
 
       case 'premium':
-        await sock.sendMessage(from, { text: '🌟 *TSAH_MKOLO Premium Features:* 🌟\n- Unrestricted AI assistance (.ai/.gpt)\n- Automated view status & likes\n- Active image generation (.image)\n[...]
+        await sock.sendMessage(from, { text: '🌟 *TSAH_MKOLO Premium Features:* 🌟\n- Unrestricted AI assistance (.ai/.gpt)\n- Automated view status & likes\n- Active image generation (.image[...]
         break;
 
       case 'pay':
@@ -792,7 +792,7 @@ _Tune in or type *.live* to check updates!_`;
           });
           
           await sock.sendMessage(from, { 
-            text: `💳 *TSAH_MKOLO SECURE INTASEND LINK* 💳\n\nWe have automatically generated a personalized M-Pesa / Card checkout link for you:\n\n🔗 *Pay Link:* ${checkDetails.checkoutUrl}\[...]
+            text: `💳 *TSAH_MKOLO SECURE INTASEND LINK* 💳\n\nWe have automatically generated a personalized M-Pesa / Card checkout link for you:\n\n🔗 *Pay Link:* ${checkDetails.checkoutUr[...]
           }, { quoted: m });
         } catch (e: any) {
           await sock.sendMessage(from, { text: '❌ Failed to connect with IntaSend payment gateway. Please retry later.' }, { quoted: m });
@@ -803,7 +803,7 @@ _Tune in or type *.live* to check updates!_`;
         try {
           const paid = await isUserPaid(context.sender);
           if (paid) {
-            await sock.sendMessage(from, { text: `✅ *TSAH_MKOLO Subscription Active!* 🎉\nYou have unrestricted access to all media extraction downloaders, AI image generators, and live integrat[...]
+            await sock.sendMessage(from, { text: `✅ *TSAH_MKOLO Subscription Active!* 🎉\nYou have unrestricted access to all media extraction downloaders, AI image generators, and live integ[...]
           } else {
             await sock.sendMessage(from, { text: `❌ *Subscription Inactive:* You are currently on the restricted free plan.\n\nType *.pay* to instantly generate an M-Pesa payment link!` }, { qu[...]
           }
