@@ -1,5 +1,5 @@
 {
-  "name": "DANSCOM",
+  "name": "Tsah_Mkolo",
   "description": "Modern WhatsApp automation bot with AI integration, persistent session storage via Firebase, and modular command system.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
